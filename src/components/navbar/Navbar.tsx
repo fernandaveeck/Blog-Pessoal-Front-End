@@ -1,6 +1,16 @@
-import { Link } from "react-router-dom"
+import { useContext } from "react"
+import { Link, useNavigate } from "react-router-dom"
+import { AuthContext } from "../../contexts/AuthContext"
 
 function Navbar() {
+
+    const navigate = useNavigate()
+    const { handleLogout } = useContext(AuthContext)
+
+    function sair() {
+        handleLogout()
+        navigate('/')
+    }
     return (
         <>
             <header className="w-full flex justify-between py-4 bg-indigo-900 text-white">
@@ -12,7 +22,7 @@ function Navbar() {
                     <span>Temas</span>
                     <span>Cadastrar Temas</span>
                     <span>Perfil</span>
-                    <span>Sair</span>
+                    <Link to='' onClick={sair} className="hover:underline"> <span>Sair</span> </Link>
                 </menu>
 
             </header>
@@ -21,3 +31,5 @@ function Navbar() {
 }
 
 export default Navbar
+
+
