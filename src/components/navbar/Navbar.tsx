@@ -19,7 +19,7 @@ function Navbar() {
                 </nav>
                 <menu className="flex gap-6 mx-8">
                     <span>Postagens</span>
-                    <span>Temas</span>
+                    <Link to={'/temas'} className="hover:underline"> <span>Temas</span> </Link>
                     <span>Cadastrar Temas</span>
                     <span>Perfil</span>
                     <Link to='' onClick={sair} className="hover:underline"> <span>Sair</span> </Link>
