@@ -18,7 +18,7 @@ function Navbar() {
                     <Link to="/home" className="text-2xl font-bold">Blog Pessoal</Link>
                 </nav>
                 <menu className="flex gap-6 mx-8">
-                    <span>Postagens</span>
+                    <Link to='/postagens' className='hover:underline'> <span>Postagens</span> </Link>
                     <Link to={'/temas'} className="hover:underline"> <span>Temas</span> </Link>
                     <Link to='/cadastrartema' className='hover:underline'> <span>Cadastrar tema</span> </Link>
                     <span>Perfil</span>
