@@ -1,4 +1,5 @@
 import ListaPostagens from "../../components/postagem/listapostagens/ListaPostagens";
+import ModalPostagem from "../../components/postagem/modalpostagem/ModalPostagem";
 
 function Home() {
   return (
@@ -8,8 +9,8 @@ function Home() {
           <article className="flex flex-col gap-4 items-center justify-center py-4">
             <h1 className="text-5xl font-bold">Seja Bem Vindo!</h1>
             <p className="text-xl">Expresse aqui seus pensamentos e opiniões</p>
-            <button className="flex justify-around gap-4 rounded text-white border-white border-solid border-2 py-2 px-4">
-              Nova Postagem
+            <button className="flex justify-around gap-4">
+              <ModalPostagem />
             </button>
           </article>
           <figure className="flex justify-center w-2/3">
