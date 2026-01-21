@@ -1,5 +1,4 @@
 import type Tema from "./Tema";
-import Usuario from "./Usuario";
 
 export default interface Postagem {
     id: number;
@@ -7,5 +6,4 @@ export default interface Postagem {
     texto: string;
     data: string;
     tema?: Tema;
-    usuario?: Usuario;
 }
