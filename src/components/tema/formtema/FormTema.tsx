@@ -32,7 +32,7 @@ function FormTema() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado!')
+            alert('Sua sessão expirou, faça login novamente.')
             navigate('/')
         }
     }, [token])
