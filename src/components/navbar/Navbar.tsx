@@ -14,7 +14,7 @@ function Navbar() {
     }
 
     let component: ReactNode
-    if (usuario.token !== undefined) {
+    if (usuario.token !== '') {
         component = (
             <>
                 <header className="w-full flex justify-between py-4 bg-indigo-900 text-white">
