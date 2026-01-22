@@ -3,8 +3,8 @@ import { useNavigate, useParams } from "react-router-dom"
 import Tema from "../../../models/Tema"
 import { AuthContext } from "../../../contexts/AuthContext"
 import { buscar, deletar } from "../../../services/Service"
-import { IslandIcon } from "@phosphor-icons/react"
 import { ClipLoader } from "react-spinners"
+import { ToastAlerta } from "../../../utils/ToastAlerta"
 
 function DeletarTema() {
 
@@ -33,7 +33,7 @@ function DeletarTema() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Sua sessão expirou, faça login novamente.')
+            ToastAlerta('Sua sessão expirou, faça login novamente.', 'info')
             navigate('/')
         }
     }, [token])
@@ -53,12 +53,12 @@ function DeletarTema() {
                     'Authorization': token
                 }
             })
-            alert("Tema apagado com sucesso!")
+            ToastAlerta("Tema apagado com sucesso!", 'sucesso')
         } catch (error: any) {
             if (error.toString().includes('401') || error.toString().includes('403')) {
                 handleLogout()
             } else {
-                alert("Erro ao deletar tema.")
+                ToastAlerta("Erro ao deletar tema.", 'erro')
             }
         }
 

@@ -4,6 +4,7 @@ import Postagem from "../../../models/Postagem";
 import { AuthContext } from "../../../contexts/AuthContext";
 import { buscar, deletar } from "../../../services/Service";
 import { ClipLoader } from "react-spinners";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 function DeletarPostagem() {
 
@@ -33,7 +34,7 @@ function DeletarPostagem() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Sua sessão expirou, faça login novamente.')
+            ToastAlerta('Sua sessão expirou, faça login novamente.', 'info')
             navigate('/')
         }
     }, [token])
@@ -54,7 +55,7 @@ function DeletarPostagem() {
                 }
             })
 
-            alert("Postagem deletada com sucesso!")
+            ToastAlerta("Postagem deletada com sucesso!", 'sucesso')
         } catch (error: any) {
             if (error.toString().includes('401') || error.toString().includes('403')) {
                 handleLogout()

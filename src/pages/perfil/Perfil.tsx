@@ -1,6 +1,7 @@
 import { useContext, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { AuthContext } from "../../contexts/AuthContext"
+import { ToastAlerta } from "../../utils/ToastAlerta"
 
 function Perfil() {
 
@@ -10,7 +11,7 @@ function Perfil() {
 
     useEffect(() => {
         if (usuario.token === '') {
-            alert('Sua sessão expirou, faça login novamente.')
+            ToastAlerta('Sua sessão expirou, faça login novamente.', 'info')
             navigate('/')
         }
     }, [usuario.token])
