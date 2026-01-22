@@ -21,7 +21,7 @@ function Navbar() {
                     <Link to='/postagens' className='hover:underline'> <span>Postagens</span> </Link>
                     <Link to={'/temas'} className="hover:underline"> <span>Temas</span> </Link>
                     <Link to='/cadastrartema' className='hover:underline'> <span>Cadastrar tema</span> </Link>
-                    <span>Perfil</span>
+                    <Link to='/perfil' className="hover:underline"> <span>Perfil</span> </Link> 
                     <Link to='' onClick={sair} className="hover:underline"> <span>Sair</span> </Link>
                 </menu>
 
