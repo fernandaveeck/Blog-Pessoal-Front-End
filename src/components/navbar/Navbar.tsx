@@ -18,9 +18,9 @@ function Navbar() {
     if (usuario.token !== '') {
         component = (
             <>
-                <header className="w-full flex justify-between py-4 bg-indigo-900 text-white">
+                <header className="w-full flex justify-between py-4 bg-blue-200 text-black">
                     <nav className="conteiner flex justify-between text-lg mx-8">
-                        <Link to="/home" className="text-2xl font-bold">Blog Pessoal</Link>
+                        <Link to="/home" className="text-2xl font-bold"><img src="public\letter.me letras.svg" alt="Letter.Me" className="w-35" /></Link>
                     </nav>
                     <menu className="flex gap-6 mx-8">
                         <Link to='/postagens' className='hover:underline'> <span>Postagens</span> </Link>
